@@ -3,13 +3,10 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import javafx.scene.text.Text;
@@ -46,7 +43,7 @@ public class Main extends Application{
 
         // Create a scene and place it in the stage
         Scene scene = new Scene(pane);
-        primaryStage.setTitle("ShowHBoxVBox"); // Set the stage title
+        primaryStage.setTitle("Cards Game"); // Set the stage title
         primaryStage.setScene(scene); // Place the scene in the stage
         primaryStage.show(); // Display the stage
     }
@@ -66,9 +63,6 @@ public class Main extends Application{
 
         b1.setOnAction(e -> ChangeImage());
 
-        text = new Text("");
-        hBox.getChildren().add(text);
-
         return hBox;
     }
 
@@ -79,8 +73,6 @@ public class Main extends Application{
     private HBox getSecondHBox(){
         HBox hBox = new HBox(15);
         hBox.setPadding(new Insets(15, 15, 15, 15));
-
-        Image image = new Image("images/flag.png");
 
         imageView1 = new ImageView(new Image(ImageUrl(GetRandom())));
 
@@ -102,7 +94,6 @@ public class Main extends Application{
         imageView1.setImage(new Image(ImageUrl(GetRandom())));
         imageView2.setImage(new Image(ImageUrl(GetRandom())));
         imageView3.setImage(new Image(ImageUrl(GetRandom())));
-        text.setText(""+GetRandom());
 
     }
 
@@ -283,7 +274,7 @@ public class Main extends Application{
                 imageUrl = "images/cards/king_of_spades.png";
                 break;
             default:
-                imageUrl = "images/cards/red_joker.png";
+                imageUrl = "images/red_joker.png";
                 break;
         }
         return  imageUrl;
